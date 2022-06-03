@@ -15,6 +15,9 @@ export default {
   // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
   ssr: false,
   target: "static",
+  router: {
+    base: "/cv-landing/",
+  },
   env: {
     baseUrl: process.env.BASE_URL,
     firebase: process.env.firebase,
