@@ -61,6 +61,7 @@ export default {
   display: none;
 
 .radio-label
-  cursor: pointer
-  margin-right: 8px
+  cursor: pointer;
+  font-size: 1.4rem;
+  padding: 16px 12px;
 </style>
