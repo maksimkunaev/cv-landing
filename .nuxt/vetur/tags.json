@@ -14,14 +14,11 @@
   "Experience": {
     "description": "Auto imported from components/Experience/Experience.vue"
   },
-  "Skills": {
-    "description": "Auto imported from components/Skills/Skills.vue"
+  "Socials": {
+    "description": "Auto imported from components/Socials/Socials.vue"
   },
   "TheHeader": {
     "description": "Auto imported from components/TheHeader/TheHeader.vue"
-  },
-  "Socials": {
-    "description": "Auto imported from components/Socials/Socials.vue"
   },
   "ThemeSwitcher": {
     "description": "Auto imported from components/Theme/Switcher.vue"
@@ -32,13 +29,16 @@
   "ThemeThemes": {
     "description": "Auto imported from components/Theme/themes.js"
   },
+  "Skills": {
+    "description": "Auto imported from components/Skills/Skills.vue"
+  },
+  "ThemeUtilsThemes": {
+    "description": "Auto imported from components/Theme/utils/themes.js"
+  },
   "ControlsCheckbox": {
     "description": "Auto imported from components/controls/Checkbox/Checkbox.vue"
   },
   "ControlsRadio": {
     "description": "Auto imported from components/controls/Radio/Radio.vue"
-  },
-  "ThemeUtilsThemes": {
-    "description": "Auto imported from components/Theme/utils/themes.js"
   }
 }
