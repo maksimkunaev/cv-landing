@@ -35,6 +35,7 @@ export default {
   flex-direction: column
   align-items: center;
   width: var(--layout-width);
+  max-width: 100%;
   margin: 0 auto;
 
 .bio-item, .bio-photo {
