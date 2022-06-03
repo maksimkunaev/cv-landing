@@ -7,9 +7,9 @@
       target="_blank"
       class="socials-link"
     >
-      <Card class="socials-item">
-        {{ social.label }}
-      </Card>
+      <!-- <Card class="socials-item"> -->
+      {{ social.label }}
+      <!-- </Card> -->
     </a>
   </div>
 </template>
@@ -34,12 +34,19 @@ export default {
     flex-direction:  column
   }
 
+.socials-link
+  text-decoration: none
+  border-radius: 8px;
+  padding: 16px 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 100%;
+  border: 1px solid var(--quaternery-color);
 
-.socials-item
-  margin-top: 16px;
   margin-right: 16px;
   color: var(--tertiary-color)
 
-.socials-link
-  text-decoration: none
+  &:hover, &:focus
+    background-color: var(--quaternery-color)
 </style>
