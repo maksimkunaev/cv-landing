@@ -47,6 +47,9 @@ export default {
   margin-right: 16px;
   color: var(--tertiary-color)
 
+  @media (max-width: 600px)
+    margin-top: 16px;
+
   &:hover, &:focus
     background-color: var(--quaternery-color)
 </style>

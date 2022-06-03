@@ -3,21 +3,18 @@
     "name": "experience",
     "path": "/experience",
     "component": "/Users/maxim/private/landing/pages/experience.vue",
-    "chunkName": "pages/experience",
-    "_name": "_1ff90a58"
+    "chunkName": "pages/experience"
   },
   {
     "name": "skills",
     "path": "/skills",
     "component": "/Users/maxim/private/landing/pages/skills.vue",
-    "chunkName": "pages/skills",
-    "_name": "_36292030"
+    "chunkName": "pages/skills"
   },
   {
     "name": "index",
     "path": "/",
     "component": "/Users/maxim/private/landing/pages/index.vue",
-    "chunkName": "pages/index",
-    "_name": "_52a1bd58"
+    "chunkName": "pages/index"
   }
 ]

@@ -23,16 +23,16 @@ export const themes = {
     },
     label: "🌚",
   },
-  colored: {
-    settings: {
-      "--primary-color": "#ffbe0b",
-      "--secondary-color": "#fb5607",
-      "--tertiary-color": "#ffbe0b",
-      "--quaternery-color": "#dedede",
-      "--primary-bg-color": "#3a86ff",
-      "--secondary-bg-color": "#8338ec",
-      "--primary-shadow": "2px 1px 6px 0px #ddd",
-    },
-    label: "🌈",
-  },
+  // colored: {
+  //   settings: {
+  //     "--primary-color": "#ffbe0b",
+  //     "--secondary-color": "#fb5607",
+  //     "--tertiary-color": "#ffbe0b",
+  //     "--quaternery-color": "#dedede",
+  //     "--primary-bg-color": "#3a86ff",
+  //     "--secondary-bg-color": "#8338ec",
+  //     "--primary-shadow": "2px 1px 6px 0px #ddd",
+  //   },
+  //   label: "🌈",
+  // },
 };

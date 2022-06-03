@@ -32,13 +32,13 @@
   "ThemeThemes": {
     "description": "Auto imported from components/Theme/themes.js"
   },
-  "ThemeUtilsThemes": {
-    "description": "Auto imported from components/Theme/utils/themes.js"
-  },
   "ControlsCheckbox": {
     "description": "Auto imported from components/controls/Checkbox/Checkbox.vue"
   },
   "ControlsRadio": {
     "description": "Auto imported from components/controls/Radio/Radio.vue"
+  },
+  "ThemeUtilsThemes": {
+    "description": "Auto imported from components/Theme/utils/themes.js"
   }
 }

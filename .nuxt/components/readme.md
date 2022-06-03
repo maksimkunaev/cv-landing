@@ -17,6 +17,6 @@ You can directly use them in pages and other components without the need to impo
 - `<ThemeSwitcher>` | `<theme-switcher>` (components/Theme/Switcher.vue)
 - `<Theme>` | `<theme>` (components/Theme/Theme.vue)
 - `<ThemeThemes>` | `<theme-themes>` (components/Theme/themes.js)
-- `<ThemeUtilsThemes>` | `<theme-utils-themes>` (components/Theme/utils/themes.js)
 - `<ControlsCheckbox>` | `<controls-checkbox>` (components/controls/Checkbox/Checkbox.vue)
 - `<ControlsRadio>` | `<controls-radio>` (components/controls/Radio/Radio.vue)
+- `<ThemeUtilsThemes>` | `<theme-utils-themes>` (components/Theme/utils/themes.js)

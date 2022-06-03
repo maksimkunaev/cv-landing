@@ -95,8 +95,9 @@ export const socials = [
 export const bio = {
   name: "Maksim Kunaev",
   occupation: "Front End Engineer",
-  photo:
-    "https://media-exp2.licdn.com/dms/image/C5603AQGz4V6gE10kRA/profile-displayphoto-shrink_800_800/0/1636717366310?e=1659571200&v=beta&t=2tqnkyOSZ2HBL5aeVrWsQCwWuy1KDE8_2eBElPZrfXg",
+  photo: "./media/photo.png",
+  // photo:
+  // "https://media-exp2.licdn.com/dms/image/C5603AQGz4V6gE10kRA/profile-displayphoto-shrink_800_800/0/1636717366310?e=1659571200&v=beta&t=2tqnkyOSZ2HBL5aeVrWsQCwWuy1KDE8_2eBElPZrfXg",
   description: `I am a front-end engineer, I studied at the Novosibirsk State Technical University with a degree in electronics and electrical engineering. I have over 4 years of experience in front-end development. I enjoy learning new technologies and being at their intersection, solving problems and filling knowledge gaps.
 	I try to look for parts and solutions in the code that can and should be improved or simplified.
 	I enjoy creating end products and seeing the results of my work.
