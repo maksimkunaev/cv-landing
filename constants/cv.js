@@ -14,7 +14,7 @@ export const companies = [
     ],
   },
   {
-    label: "Westarp/Realtif",
+    label: "Westarp/Realtify",
     link: "https://realtify.cz",
     location: "Remote",
     position: "Front-End Developer",
