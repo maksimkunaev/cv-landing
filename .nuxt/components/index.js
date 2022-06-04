@@ -5,13 +5,13 @@ export { default as ExperienceCompany } from '../../components/Experience/Compan
 export { default as Experience } from '../../components/Experience/Experience.vue'
 export { default as Skills } from '../../components/Skills/Skills.vue'
 export { default as Socials } from '../../components/Socials/Socials.vue'
+export { default as TheHeader } from '../../components/TheHeader/TheHeader.vue'
 export { default as ThemeSwitcher } from '../../components/Theme/Switcher.vue'
 export { default as Theme } from '../../components/Theme/Theme.vue'
 export { default as ThemeThemes } from '../../components/Theme/themes.js'
-export { default as TheHeader } from '../../components/TheHeader/TheHeader.vue'
-export { default as ThemeUtilsThemes } from '../../components/Theme/utils/themes.js'
-export { default as ControlsCheckbox } from '../../components/controls/Checkbox/Checkbox.vue'
 export { default as ControlsRadio } from '../../components/controls/Radio/Radio.vue'
+export { default as ControlsCheckbox } from '../../components/controls/Checkbox/Checkbox.vue'
+export { default as ThemeUtilsThemes } from '../../components/Theme/utils/themes.js'
 
 // nuxt/nuxt.js#8607
 function wrapFunctional(options) {

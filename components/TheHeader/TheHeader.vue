@@ -1,7 +1,5 @@
 <template>
   <header class="header-root">
-    <Theme class="header-theme" />
-
     <div class="header-tabs">
       <NuxtLink
         v-for="tab in tabs"
@@ -12,6 +10,7 @@
         >{{ tab.label }}</NuxtLink
       >
     </div>
+    <Theme class="header-theme" />
   </header>
 </template>
 
@@ -45,20 +44,14 @@ export default {
   border-bottom: 1px solid var(--quaternery-color);
   justify-content: center;
   position relative
-
-  @media (max-width: 600px) {
-    flex-direction: column
-    align-items: center;
-    justify-content: center;
-  }
-
+  align-items: center;
 
 .header-tabs
   display: flex;
-
-  @media (max-width: 600px) {
-    margin-top: 8px
-  }
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  margin-left 16px
 
 .header-button
   padding: 24px 40px;
@@ -88,14 +81,6 @@ export default {
   opacity: 1;
 
 .header-theme
-  position: absolute;
-  right: 100px;
-  top: 50%;
-  transform: translate(-50%, -50%);
-
-  @media (max-width: 600px) {
-    transform none
-    position: static;
-    margin-top: 16px
-  }
+  position: relative;
+  margin-right 16px
 </style>

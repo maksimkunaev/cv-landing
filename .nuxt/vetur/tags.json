@@ -20,6 +20,9 @@
   "Socials": {
     "description": "Auto imported from components/Socials/Socials.vue"
   },
+  "TheHeader": {
+    "description": "Auto imported from components/TheHeader/TheHeader.vue"
+  },
   "ThemeSwitcher": {
     "description": "Auto imported from components/Theme/Switcher.vue"
   },
@@ -29,16 +32,13 @@
   "ThemeThemes": {
     "description": "Auto imported from components/Theme/themes.js"
   },
-  "TheHeader": {
-    "description": "Auto imported from components/TheHeader/TheHeader.vue"
-  },
-  "ThemeUtilsThemes": {
-    "description": "Auto imported from components/Theme/utils/themes.js"
+  "ControlsRadio": {
+    "description": "Auto imported from components/controls/Radio/Radio.vue"
   },
   "ControlsCheckbox": {
     "description": "Auto imported from components/controls/Checkbox/Checkbox.vue"
   },
-  "ControlsRadio": {
-    "description": "Auto imported from components/controls/Radio/Radio.vue"
+  "ThemeUtilsThemes": {
+    "description": "Auto imported from components/Theme/utils/themes.js"
   }
 }

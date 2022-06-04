@@ -1,24 +1,18 @@
 <template>
-  <RadioGroup
-    label="Brand color"
-    v-model="themeValue"
-    @input="onChange"
-    :options="options"
-  />
+  <Checkbox :value="themeToBoolean" @input="onChange" />
 </template>
 
 <script>
-import RadioGroup from "~/components/controls/Radio/Radio";
+import Checkbox from "~/components/controls/Checkbox/Checkbox";
 import { themes } from "./themes";
 
 export default {
   components: {
-    RadioGroup,
+    Checkbox,
   },
   data() {
     return {
       themes,
-      themeValue: this.value,
     };
   },
   props: {
@@ -27,22 +21,17 @@ export default {
       default: () => "",
     },
   },
-  watch: {
-    value() {
-      this.themeValue = this.value;
-    },
-  },
   computed: {
-    options() {
-      return Object.keys(this.themes).map((key) => ({
-        id: key,
-        label: this.themes[key].label,
-      }));
+    themeToBoolean() {
+      return this.value === "light";
     },
   },
   methods: {
-    onChange(theme) {
-      this.$emit("input", theme);
+    booleanToTheme(val) {
+      return val ? "light" : "dark";
+    },
+    onChange(val) {
+      this.$emit("input", this.booleanToTheme(val));
     },
   },
 };
