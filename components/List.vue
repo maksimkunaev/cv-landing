@@ -27,6 +27,6 @@ export default {
 }
 
 .list-item {
-  margin-top: 4px;
+  margin-top: 8px;
 }
 </style>

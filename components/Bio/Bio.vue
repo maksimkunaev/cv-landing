@@ -5,7 +5,7 @@
     <div class="bio-photo">
       <img :src="bio.photo" alt="" />
     </div>
-    <p class="bio-item text-S bio-description">{{ bio.description }}</p>
+    <p class="bio-item text-S bio-description" v-html="formattedDescription" />
 
     <Socials class="bio-item" :socials="bio.socials" />
   </div>
@@ -14,6 +14,7 @@
 <script>
 import { bio } from "~/constants/cv";
 import Socials from "~/components/Socials/Socials";
+// import { skills } from "../../constants/cv";
 
 export default {
   name: "Bio",
@@ -25,6 +26,17 @@ export default {
       bio,
       isLoading: false,
     };
+  },
+  computed: {
+    formattedDescription() {
+      console.log(bio);
+      return bio.description.replace(
+        /{skills}/g,
+        bio.skills
+          .map((skill) => `<span class="text-M">${skill}</span>`)
+          .join(", ")
+      );
+    },
   },
 };
 </script>

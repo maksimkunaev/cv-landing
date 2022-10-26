@@ -96,23 +96,34 @@ export const bio = {
   name: "Maksim Kunaev",
   occupation: "Front End Engineer",
   photo: "./media/photo.png",
+  skills: [
+    "TypeScript",
+    "Vue.js",
+    "React.js",
+    "Angular",
+    "Nuxt.js",
+    "Next.js",
+    "Redux.js",
+    "Vuex",
+    "Mobx.js",
+    "Webpack",
+    "Node.js",
+  ],
   // photo:
   // "https://media-exp2.licdn.com/dms/image/C5603AQGz4V6gE10kRA/profile-displayphoto-shrink_800_800/0/1636717366310?e=1659571200&v=beta&t=2tqnkyOSZ2HBL5aeVrWsQCwWuy1KDE8_2eBElPZrfXg",
-  description: `I am a front-end engineer, I studied at the Novosibirsk State Technical University with a degree in electronics and electrical engineering. I have over 4 years of experience in front-end development. I enjoy learning new technologies and being at their intersection, solving problems and filling knowledge gaps.
-	I try to look for parts and solutions in the code that can and should be improved or simplified.
-	I enjoy creating end products and seeing the results of my work.
-	Open mainly for remote vacancies from any country in the world.`,
+  description: `Front-end engineer, studied at the Novosibirsk State Technical University with a degree in electronics and electrical engineering. Now I have over more than 4 years of experience in front-end development with technologies such as {skills}.
+  I enjoy learning new technologies and being at their intersection, solving problems and filling knowledge gaps. Trying to find parts and solutions in the code that can and should be improved or simplified. Creating final products and seeing the results of your work is such a pleasure.
+  Open mainly for remote vacancies.`,
   socials,
 };
 
 export const skills = [
-  "3,5+ years experience in front-end development. TypeScript",
+  "4,5+ years experience in front-end development. TypeScript",
   "Vue.js, React.js, Angular",
   "Nuxt.js, Next.js",
   "Redux.js, Vuex, Mobx.js,",
   "Webpack, Node.js, Babel, NPM, graphql, stylus, GIT",
   "Unix CLI, shell scripting",
   "Python/Jupiter notebooks",
-  "Experience with shell scripting",
   "English: Upper-Intermediate",
 ];
