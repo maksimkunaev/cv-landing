@@ -31,8 +31,8 @@ export default {
     formattedDescription() {
       console.log(bio);
       return bio.description.replace(
-        /{skills}/g,
-        bio.skills
+        /{technologies}/g,
+        bio.technologies
           .map((skill) => `<span class="text-M">${skill}</span>`)
           .join(", ")
       );

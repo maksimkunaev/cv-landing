@@ -15,3 +15,5 @@ $ npm run dev
 $ npm run generate
 $ npm run start
 ```
+
+3. Demo: [cv-landing](https://maksimkunaev.github.io/cv-landing/).

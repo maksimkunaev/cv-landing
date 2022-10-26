@@ -1,5 +1,4 @@
-import path from "path";
-import fs from "fs";
+import headerTags from "./constants/meta-tags";
 
 const serverConfig =
   process.env.NODE_ENV !== "production"
@@ -31,17 +30,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: "Frontend Sandbox",
-    htmlAttrs: {
-      lang: "en",
-    },
-    meta: [
-      { charset: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" },
-      { name: "format-detection", content: "telephone=no" },
-    ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }],
+    ...headerTags,
   },
 
   css: [
