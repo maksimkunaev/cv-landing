@@ -11,7 +11,7 @@ export const technologies = [
   "Webpack",
   "Node.js",
 ];
-export const bioDescription = `Front-end Engineer with experience in Electronics and Electrical Engineering studies at Novosibirsk State Technical University. 4,5+ years of experience in front-end development with technologies such as {technologies}. Skilled in learning new technologies, problem-solving, and improving code efficiency. I find fulfillment in creating functional and successful products.`;
+export const bioDescription = `Front-end Engineer with experience in Electronics and Electrical Engineering studied at Novosibirsk State Technical University. 4,5+ years of experience in front-end development with technologies such as {technologies}. Skilled in learning new technologies, problem-solving, and improving code efficiency. I find fulfillment in creating functional and successful products.`;
 
 export const companies = [
   {
