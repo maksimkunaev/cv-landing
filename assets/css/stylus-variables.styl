@@ -1,0 +1,26 @@
+$mobile-size=480px
+$tablet-size=890px
+$layout-width=700px
+
+scrollbar(n)
+    ::-webkit-scrollbar-track
+      -webkit-box-shadow: inset 0 0 4px var(--tertirary-color)
+      background-color: var(--tertirary-color)
+      border-radius: 10px;
+
+    ::-webkit-scrollbar
+      width: n;
+      height: n;
+
+      background-color: var(--tertirary-color)
+      cursor pointer
+
+      &:hover
+        width n
+
+    ::-webkit-scrollbar-thumb
+      background-color: var(--secondary-color)
+      border-radius: 10px;
+
+form input[type=button]
+  border-radius(5px)

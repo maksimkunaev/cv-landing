@@ -20,7 +20,5 @@ export default {
 <style lang="stylus">
 .skills-root
   display: flex
-  width: var(--layout-width);
   max-width: 100%;
-  margin: 0 auto;
 </style>

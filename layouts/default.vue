@@ -1,18 +1,18 @@
 <template>
   <div class="container">
     <TheHeader />
-    <div class="main">
-      <Nuxt />
-    </div>
+    <ScrollToTop />
+    <Nuxt />
   </div>
 </template>
 
 <script>
 export default {};
 </script>
+
 <style lang="stylus">
 html, body, #__nuxt, #__layout, .container
-  height 100%
+  min-height 100%
 
 .container
   display: flex;
@@ -21,12 +21,5 @@ html, body, #__nuxt, #__layout, .container
   background: var(--primary-bg-color);
   color: var(--primary-color);
   transition: color 0.2s, background-color 0.2s
-
-.main
-  flex 1
-  overflow: auto;
-  padding: 32px 16px;
-  width: 100%
-  max-width: 100%
-  margin: 0 auto;
+  padding-bottom: 48px;
 </style>

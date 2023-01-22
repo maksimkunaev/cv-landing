@@ -1,3 +1,4 @@
+
 input, select
   padding: 5px 9px;
   border-radius: 6px;
@@ -30,9 +31,20 @@ img {
 
   background-color: var(--tertirary-color)
   cursor pointer
+
   &:hover
     width 8px
 
 ::-webkit-scrollbar-thumb
   background-color: var(--secondary-color)
   border-radius: 10px;
+  
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-behavior: smooth;
+  scrollbar(8px)
+}

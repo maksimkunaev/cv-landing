@@ -16,6 +16,7 @@ export default {
   target: "static",
   router: {
     base: "/cv-landing/",
+    trailingSlash: true,
   },
   env: {
     baseUrl: process.env.BASE_URL,
@@ -32,13 +33,15 @@ export default {
   head: {
     ...headerTags,
   },
-
+  buildModules: ["@nuxtjs/style-resources"],
+  styleResources: {
+    stylus: ["@/assets/css/stylus-variables.styl"],
+  },
   css: [
     "@/assets/css/fonts.styl",
-    "@/assets/css/page.styl",
     "@/assets/css/reset.css",
     "@/assets/css/main.styl",
-    "@/assets/css/variables.styl",
+    "@/assets/css/css-variables.styl",
   ],
 
   components: true,

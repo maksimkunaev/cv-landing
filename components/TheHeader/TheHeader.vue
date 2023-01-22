@@ -1,37 +1,63 @@
 <template>
-  <header class="header-root">
-    <div class="header-tabs">
-      <NuxtLink
-        v-for="tab in tabs"
-        :key="tab.link"
-        :to="tab.link"
-        class="header-button"
-        :class="{ 'header-active': activeTab === tab.link }"
-        >{{ tab.label }}</NuxtLink
-      >
-    </div>
-    <Theme class="header-theme" />
-  </header>
+  <div class="header-wrapper">
+    <header class="header-root">
+      <nav class="header-tabs">
+        <a
+          class="header-button header-S"
+          :class="{ 'header-active': activeTab === section.link }"
+          v-for="section in filteredSections"
+          :key="section.link"
+          :href="`#${section.link}`"
+          @click="({ target }) => handleTabClick(target, section.link)"
+          >{{ section.label }}</a
+        >
+      </nav>
+      <Theme class="header-theme" />
+    </header>
+  </div>
 </template>
 
 <script>
-import { tabs } from "~/constants/cv";
+import { sections } from "~/constants/cv";
+import CurrentVisibleTab from "@/utils/CurrentVisible.js";
+const preventObserverDelay = 800;
 
 export default {
   name: "TheHeader",
+  mixins: [CurrentVisibleTab],
+
   data() {
     return {
-      tabs,
+      sections,
       activeTab: "",
+      isScrolling: false,
     };
   },
+  methods: {
+    handleTabClick(target, tabName) {
+      this.isScrolling = true;
+      this.activeTab = tabName;
+      target.scrollIntoView({
+        inline: "center",
+      });
+
+      setTimeout(() => {
+        this.isScrolling = false;
+      }, preventObserverDelay);
+    },
+  },
+  computed: {
+    filteredSections() {
+      return sections.filter((section) => section.showLink);
+    },
+  },
   watch: {
-    $route: {
-      handler: function (search) {
-        console.log(search.path);
-        this.activeTab = search.path;
+    computedActiveTab: {
+      handler: function (tabName) {
+        if (this.isScrolling) return;
+
+        this.activeTab = tabName;
       },
-      deep: true,
       immediate: true,
     },
   },
@@ -39,17 +65,25 @@ export default {
 </script>
 
 <style lang="stylus">
+@import "@/assets/css/stylus-variables.styl"
+
+.header-wrapper
+  scrollbar(0)
+
 .header-root
   display: flex;
-  border-bottom: 1px solid var(--quaternery-color);
-  justify-content: center;
-  position relative
   align-items: center;
+  border-bottom: 1px solid var(--quaternery-color);
+  background-color: var(--opacity-bg-color);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  right: 0;
+  left: 0;
+  overflow auto
 
 .header-tabs
   display: flex;
   flex: 1;
-  align-items: center;
   justify-content: center;
   margin-left 16px
 
@@ -67,13 +101,18 @@ export default {
   justify-content: center;
 
   border-width: 0;
-  opacity: 0.8;
+  opacity: 0.7;
+  white-space: nowrap;
 
-  transition: border-width 0.2s, opacity 0.2s;
+  transition: all 0.2s, opacity 0.2s;
 
-  @media (max-width: 600px) {
-    font-size: 12px
-    padding: 16px
+  &:hover, &:focus {
+    border-width: 1px;
+    opacity: 1;
+  }
+
+  @media (max-width: $mobile-size) {
+    padding: 16px;
   }
 
 .header-active

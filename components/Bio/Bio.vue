@@ -1,42 +1,23 @@
 <template>
   <div class="bio-root">
-    <h2 class="header-L">{{ bio.name }}</h2>
-    <p class="bio-item text-L">{{ bio.occupation }}</p>
     <div class="bio-photo">
       <img :src="bio.photo" alt="" />
     </div>
-    <p class="bio-item text-S bio-description" v-html="formattedDescription" />
-
-    <Socials class="bio-item" :socials="bio.socials" />
+    <h2 class="header-L bio-name">{{ bio.name }}</h2>
+    <p class="bio-item text-L">{{ bio.occupation }}</p>
   </div>
 </template>
 
 <script>
 import { bio } from "~/constants/cv";
-import Socials from "~/components/Socials/Socials";
-// import { skills } from "../../constants/cv";
 
 export default {
   name: "Bio",
-  components: {
-    Socials,
-  },
   data() {
     return {
       bio,
       isLoading: false,
     };
-  },
-  computed: {
-    formattedDescription() {
-      console.log(bio);
-      return bio.description.replace(
-        /{technologies}/g,
-        bio.technologies
-          .map((skill) => `<span class="text-M">${skill}</span>`)
-          .join(", ")
-      );
-    },
   },
 };
 </script>
@@ -46,17 +27,15 @@ export default {
   display flex
   flex-direction: column
   align-items: center;
-  width: var(--layout-width);
   max-width: 100%;
   margin: 0 auto;
-
-.bio-item, .bio-photo {
+.bio-item, .bio-photo, .bio-name {
   margin-top: 24px;
 }
 
 .bio-photo
-  width: 400px;
-  height: 400px;
+  width: 300px;
+  height: 300px;
   max-width: 100%;
   max-height: 100%;
   border-radius: 300px;
@@ -65,11 +44,6 @@ export default {
   align-items: center;
   justify-content: center;
 
-  @media (max-width: 600px) {
-    width: 300px;
-    height: 300px;
-  }
-
-.bio-description
-  text-align: center;
+.bio-photo
+  flex 1
 </style>
