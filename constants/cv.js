@@ -10,61 +10,66 @@ export const technologies = [
   "Mobx.js",
   "Webpack",
   "Node.js",
+  "JavaScript",
+  "HTML5",
+  "CSS3",
+  "Git"
 ];
-export const bioDescription = `Front-end Engineer with experience in Electronics and Electrical Engineering studied at Novosibirsk State Technical University. 4,5+ years of experience in front-end development with technologies such as {technologies}. Skilled in learning new technologies, problem-solving, and improving code efficiency. I find fulfillment in creating functional and successful products.`;
+
+export const bioDescription = `Frontend Engineer with experience in Electronics and Electrical Engineering studied at Novosibirsk State Technical University. 5+ years of experience in frontend development with technologies such as {technologies}. Skilled in performance optimization, creating responsive applications, and improving code efficiency. I find fulfillment in creating functional and successful products that deliver exceptional user experiences.`;
 
 export const companies = [
   {
     label: "PriceHubble",
     link: "https://priceHubble.com",
     location: "Remote",
-    position: "Front-End Developer",
+    position: "Frontend Developer",
     startDate: "Oct 2021",
-    endDate: "current time",
-    responsibilities:
-      "Responsible for developing and releasing frontend UX features using JavaScript and TypeScript, including implementation of a full Responsive Web Design and ensuring code coverage through testing.",
+    endDate: "Feb 2025",
+    responsibilities: [
+      "Implemented client-side lazy loading, reducing initial UI render time from 1-2 minutes to a few seconds.",
+      "Led seminar on front-end architecture and performance optimization, enhancing team capabilities.",
+      "Integrated and managed 40-50 new features, significantly improving system functionality."
+    ],
   },
   {
-    label: "Westarp/Realtify",
+    label: "Realtify",
     link: "https://realtify.cz",
-    location: "Remote",
-    position: "Front-End Developer",
+    location: "Prague, Czechia",
+    position: "Frontend Developer",
     startDate: "Oct 2019",
     endDate: "Oct 2021",
-    responsibilities:
-      "Implementing a polished and usable service including maps, tables and UI animations. Responsible for translating business requirements into functional frontend and UX features using modern technologies such as JavaScript, HTTP, CSS3, and HTML5",
+    responsibilities: [
+      "Built and led development of entire front-end project using Vue.js, creating about 20 pages and several dozen components.",
+      "Designed and implemented multi-page application with logical quiz forms, enhancing user engagement.",
+      "Optimized website performance, improving load times and overall user experience."
+    ],
   },
-
   {
-    label: "ServiceWhale",
-    link: "https://servicewhale.com/",
-    location: "Remote",
-    position: "Front-End Developer",
-    startDate: "Aug 2019",
-    endDate: "Nov 2019",
-    responsibilities:
-      "Maintaining the web service and fixing bugs as they arise. Participated in building reusable components and front-end libraries for future use. Writing technical documentation for the front-end part of the service. Ensured cross-browser compatibility, including coding for Internet Explorer.",
-  },
-
-  {
-    label: "Latoken",
+    label: "LATOKEN",
     link: "https://latoken.com",
     location: "Moscow",
-    position: "Front-End Developer",
+    position: "Frontend Developer",
     startDate: "Sep 2018",
     endDate: "Aug 2019",
-    responsibilities:
-      "Translating web application from template engine to multi-page application, ongoing maintenance, enhancement of front-end applications, implementing and releasing product features for web and mobile web devices, communicating with development teams and product managers to implement software solutions, and participating in design and code reviews.",
+    responsibilities: [
+      "Developed UI from scratch using React.js, making the website 2-3 times faster and more usable.",
+      "Collaborated with the development team to enhance web and mobile platforms, resulting in a 2-3 times increase in development efficiency.",
+      "Improved user interfaces by implementing approximately 50 new features, contributing to increased user engagement and platform scalability."
+    ],
   },
   {
     label: "Teledirekt",
     link: "https://teledirekt.com",
     location: "Moscow",
-    position: "Front-End Developer",
+    position: "Frontend Developer",
     startDate: "Jun 2018",
     endDate: "Sep 2018",
-    responsibilities:
-      "Responsible for coding landing pages using web frameworks, and ensuring cross-browser compatibility.",
+    responsibilities: [
+      "Created and maintained approximately 10 high-quality landing pages.",
+      "Performed regular application updates, aligning with evolving business objectives.",
+      "Optimized website performance across modern browsers and Internet Explorer, ensuring broad accessibility."
+    ],
   },
 ];
 
@@ -88,13 +93,17 @@ export const sections = [
 
 export const socials = [
   {
-    label: "Linkedin",
-    link: "https://www.linkedin.com/in/maxim-k-1a9451163/",
+    label: "LinkedIn",
+    link: "https://www.linkedin.com/in/maksim-k-1a9451163/",
   },
   {
     label: "Github",
     link: "https://github.com/maksimkunaev",
   },
+  // {
+  //   label: "Portfolio",
+  //   link: "https://maksimkunaev.github.io/cv-landing/",
+  // }
 ];
 
 export const contacts = [
@@ -103,22 +112,33 @@ export const contacts = [
 
 export const bio = {
   name: "Maksim Kunaev",
-  occupation: "Front End Engineer",
+  occupation: "Frontend Engineer",
   photo: "./media/photo.png",
   technologies,
-  // photo:
-  // "https://media-exp2.licdn.com/dms/image/C5603AQGz4V6gE10kRA/profile-displayphoto-shrink_800_800/0/1636717366310?e=1659571200&v=beta&t=2tqnkyOSZ2HBL5aeVrWsQCwWuy1KDE8_2eBElPZrfXg",
   description: bioDescription,
   socials,
   contacts,
+  location: "Budva, Montenegro"
 };
 
 export const skills = [
-  "4-5+ years of experience in front-end development",
-  "Proficient in Vue.js, React.js, and Angular frameworks such as Nuxt.js and Next.js.",
-  "Experience with state management libraries such as Redux.js, Vuex, and Mobx.js.",
-  "Web development tools and technologies including Webpack, Node.js, Babel, NPM, GraphQL, Stylus, and GIT.",
-  "Familiarity with Unix CLI and shell scripting.",
-  "Knowledge of Python and Jupiter notebooks.",
-  "English proficiency at Upper-Intermediate level.",
+  "5+ years of experience in frontend development",
+  "Performance optimization - reducing load times from minutes to seconds",
+  "Proficient in Vue.js, React.js, and Angular frameworks",
+  "Expert in TypeScript and JavaScript development",
+  "Experience with state management libraries including Redux.js, Vuex, and MobX",
+  "Web development tools including Webpack, Node.js, Git, and GraphQL",
+  "Responsive design and cross-browser compatibility",
+  "Team leadership and technical seminars",
+  "Languages: Russian (Native), English (Professional Working), Croatian (Limited Working), Serbian (Limited Working)"
+];
+
+export const education = [
+  {
+    institution: "Novosibirsk State Technical University (NSTU)",
+    degree: "Incomplete Higher Education",
+    field: "Faculty of Radio Engineering and Electronics, Electronics and Microelectronics",
+    startDate: "2010",
+    endDate: "2014"
+  }
 ];

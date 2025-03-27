@@ -18,7 +18,7 @@ export default {
       return bio.description.replace(
         /{technologies}/g,
         bio.technologies
-          .map((skill) => `<span class="text-L">${skill}</span>`)
+          .map((skill) => `<span class="text-M">${skill}</span>`)
           .join(", ")
       );
     },

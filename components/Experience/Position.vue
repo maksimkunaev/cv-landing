@@ -10,7 +10,11 @@
       >
     </a>
 
-    <p class="text-S position-skills">{{ item.responsibilities }}</p>
+    <ul class="position-responsibilities">
+      <li v-for="(responsibility, index) in item.responsibilities" :key="index" class="text-S position-responsibility-item">
+        {{ responsibility }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -20,7 +24,7 @@ export default {
   props: {
     item: {
       type: Object,
-      defualt: () => ({}),
+      default: () => ({}),
     },
   },
 };
@@ -47,9 +51,12 @@ export default {
 .position-selected
   color: var(--secondary-color);
 
-.position-skills {
-  align-self: flex-start;
+.position-responsibilities {
   margin-top: 16px;
+}
+
+.position-responsibility-item {
+  margin-bottom: 8px;
 }
 
 .position-date

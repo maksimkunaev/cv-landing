@@ -1,4 +1,4 @@
-import ViewPortObserver from "@/utils/ViewPortObserver.js";
+import ViewPortObserver from "@/utils/viewPortObserver.js";
 import { sections } from "~/constants/cv";
 
 export default {
