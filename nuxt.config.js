@@ -15,7 +15,7 @@ export default {
   ssr: false,
   target: "static",
   router: {
-    base: "/cv-landing/",
+    base: "",
     trailingSlash: true,
   },
   env: {
