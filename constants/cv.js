@@ -171,8 +171,8 @@ export const projects = [
       "./projects/bot/bot4.png",
       "./projects/bot/bot5.png",
     ],
-    date: "2024",
-    link: "https://t.me/CoffeeSprintBot",
+    date: "2025",
+    link: "https://t.me/CaffePromenadaBot",
     results: [
       "Reduced average wait time from 8 mins → 1.5 mins",
       "Increased morning rush capacity",
@@ -198,8 +198,8 @@ export const projects = [
       "./projects/cv_autofill/cv4.png",
       "./projects/cv_autofill/cv3.png",
     ],
-    date: "2023",
-    link: "#",
+    date: "2025",
+    link: "",
     results: [
       "Reduces application time from 10-15 mins to ~30 seconds",
       "Handles 90%+ of common form fields automatically",

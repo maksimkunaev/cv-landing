@@ -53,7 +53,7 @@
       <h3 class="section-title">Results</h3>
       <ul class="results-list">
         <li v-for="(result, index) in item.results" :key="index" class="result-item">
-          <span class="result-icon">✓</span>
+          <!-- <span class="result-icon">✓</span> -->
           {{ result }}
         </li>
       </ul>
@@ -127,13 +127,19 @@ export default {
 .section-title {
   margin: 0 0 0.5rem 0;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: bold;
   color: var(--text-primary);
+  text-decoration: underline;
+  font-style: italic;
 }
 
 .product-description {
   margin: 0;
   line-height: 1.5;
+}
+
+.feature-list {
+  list-style: circle;
 }
 
 .feature-list, .results-list {
@@ -156,14 +162,11 @@ export default {
   font-size: 0.75rem;
 }
 
-/* NEW RESULTS STYLES */
 .results-list {
-  list-style: none;
-  padding-left: 0;
+  list-style: disc;
 }
 
 .result-item {
-  display: flex;
   align-items: flex-start;
   gap: 0.5rem;
   margin-bottom: 0.5rem;

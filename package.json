@@ -6,8 +6,9 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
-    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
+    "generate": "nuxt generate && echo $DOMAIN > dist/CNAME",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
+    "full-deploy": "npm run generate && npm run deploy"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.2.1",
