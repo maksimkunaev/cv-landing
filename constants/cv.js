@@ -173,7 +173,7 @@ export const projects = [
       "projects/resumequick/resumequick_4.png",
     ],
     date: "2025",
-    link: "https://resumequick.pro/",
+    // link: "https://resumequick.pro/",
     results: [
       "Creates basic formatted resume in just one click",
       "Zero learning curve - simple text to PDF conversion",
