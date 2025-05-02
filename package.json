@@ -6,9 +6,10 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate && env-cmd echo $DOMAIN > dist/CNAME",
+    "generate": "nuxt generate",
+    "postgenerate": "node create-cname.js",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup",
-    "full-deploy": "npm run generate && npm run deploy"
+    "full-deploy": "npm run generate && npm run postgenerate && npm run deploy"
   },
   "dependencies": {
     "@nuxtjs/style-resources": "^1.2.1",
@@ -22,6 +23,7 @@
     "webpack": "^4.46.0"
   },
   "devDependencies": {
+    "dotenv": "^16.5.0",
     "env-cmd": "^10.1.0",
     "push-dir": "^0.4.1"
   }

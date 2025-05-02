@@ -1,3 +1,4 @@
+require('dotenv').config();
 import headerTags from "./constants/meta-tags";
 
 const serverConfig =
