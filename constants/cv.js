@@ -152,18 +152,45 @@ export const education = [
 
 export const projects = [
   {
+    title: "📄 ResumeQuick AI",
+    problemStatement:
+      "Job seekers need a simple way to quickly convert plain text information into a formatted resume without complicated tools.",
+    keyFeatures: [
+      "One-click resume generation from plain text input",
+      "AI transforms plain text into professional resume",
+      "Direct editing in preview before downloading",
+      "Simple PDF download functionality",
+      "No account creation or login required",
+    ],
+    technologies: [
+      "Groq AI for basic text processing",
+      "Vue.js (frontend)",
+      "Client-side PDF generation",
+    ],
+    screenshots: [
+      "projects/resumequick/resumequick_3.png",
+      "projects/resumequick/resumequick_2.png",
+      "projects/resumequick/resumequick_4.png",
+    ],
+    date: "2025",
+    link: "https://resumequick.pro/",
+    results: [
+      "Creates basic formatted resume in just one click",
+      "Zero learning curve - simple text to PDF conversion",
+      "Provides editable preview for quick adjustments",
+    ],
+  },
+  {
     title: "☕️ 'Coffee To Go' Telegram Order Bot",
-    problemStatement: "Coffee shops lose 15-20% of morning rush customers due to long wait times and chaotic order management. Walk-in customers hate waiting in line just to place an order.",
+    problemStatement:
+      "Coffee shops lose 15-20% of morning rush customers due to long wait times and chaotic order management. Walk-in customers hate waiting in line just to place an order.",
     keyFeatures: [
       "Pre-order before arrival (5/15/30 min options)",
       "Custom menu with a different drinks (latte, cappuccino, americano, etc)",
       "Instant Telegram group notifications for baristas",
       "One-tap 'I've arrived' confirmation",
     ],
-    technologies: [
-      "Telegram Bot API",
-      "ManyChat (flow automation)",
-    ],
+    technologies: ["Telegram Bot API", "ManyChat (flow automation)"],
     screenshots: [
       "./projects/bot/bot1.png",
       "./projects/bot/bot2.png",
@@ -176,10 +203,10 @@ export const projects = [
     results: [
       "Reduced average wait time from 8 mins → 1.5 mins",
       "Increased morning rush capacity",
-    ]
+    ],
   },
   {
-    title: "CV Autofill Chrome Extension",
+    title: "🔍 CV Autofill Chrome Extension",
     problemStatement:
       "Job seekers waste hours manually filling identical information across different job application forms.",
     keyFeatures: [
