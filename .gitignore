@@ -90,3 +90,5 @@ dist
 # Vim swap files
 *.swp
 ssl
+
+.output
