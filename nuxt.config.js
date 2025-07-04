@@ -22,15 +22,15 @@ export default {
   },
   runtimeConfig: {
     public: {
-      baseUrl: process.env.BASE_URL,
-      firebase: process.env.firebase,
-      apiKey: process.env.apiKey,
-      authDomain: process.env.authDomain,
-      projectId: process.env.projectId,
-      storageBucket: process.env.storageBucket,
-      messagingSenderId: process.env.messagingSenderId,
-      appId: process.env.appId,
-      measurementId: process.env.measurementId,
+      // baseUrl: process.env.BASE_URL,
+      // firebase: process.env.firebase,
+      // apiKey: process.env.apiKey,
+      // authDomain: process.env.authDomain,
+      // projectId: process.env.projectId,
+      // storageBucket: process.env.storageBucket,
+      // messagingSenderId: process.env.messagingSenderId,
+      // appId: process.env.appId,
+      // measurementId: process.env.measurementId,
     }
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
