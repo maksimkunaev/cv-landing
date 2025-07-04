@@ -15,4 +15,8 @@ if (!fs.existsSync(distPath)) {
 }
 
 fs.writeFileSync(path.join(distPath, 'CNAME'), domain);
+fs.writeFileSync(path.join(distPath, '.nojekyll'), '');
+
 console.log(`✅ Created CNAME with domain: ${domain}`);
+
+
