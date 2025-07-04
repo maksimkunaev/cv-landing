@@ -65,8 +65,7 @@ export default {
 </script>
 
 <style lang="stylus">
-@import "@/assets/css/stylus-variables.styl"
-
+@import "../../assets/css/stylus-variables.styl"
 .header-wrapper
   scrollbar(0)
 

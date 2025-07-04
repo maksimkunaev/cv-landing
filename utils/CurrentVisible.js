@@ -24,11 +24,15 @@ export default {
       intersectionRatio,
       targetId
     ) => {
-      this.$set(this.tabs, targetId, isIntersecting ? intersectionRatio : 0);
+      this.tabs[targetId] = isIntersecting ? intersectionRatio : 0;
     };
     sections.forEach(({ link }) => {
-      const achorElement = document.querySelector(`#${link}`);
-      observer.observe(achorElement);
+      const anchorElement = document.querySelector(`#${link}`);
+      if (anchorElement) {
+        observer.observe(anchorElement);
+      } else {
+        console.warn(`Element with id #${link} not found`);
+      }
     });
   },
   methods: {

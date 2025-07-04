@@ -13,6 +13,9 @@ import { bio } from "~/constants/cv";
 
 export default {
   name: "Bio",
+  mounted() {
+  },
+
   data() {
     return {
       bio,
@@ -36,14 +39,18 @@ export default {
 .bio-photo
   width: 300px;
   height: 300px;
-  max-width: 100%;
-  max-height: 100%;
-  border-radius: 300px;
+  border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 
-.bio-photo
-  flex 1
+
+.bio-photo img
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 </style>

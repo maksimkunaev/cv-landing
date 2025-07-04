@@ -2,7 +2,7 @@
   <div class="container">
     <TheHeader />
     <ScrollToTop />
-    <Nuxt />
+    <NuxtPage />
   </div>
 </template>
 

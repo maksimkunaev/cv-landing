@@ -28,9 +28,15 @@ export default {
     this.themeName = getTheme() || this.defaultTheme;
   },
   methods: {
-    onChange(themeName) {
+    _onChange(themeName) {
       this.themeName = themeName;
       setTheme(themeName);
+    },
+    onChange(event) {
+      const themeName = event?.target?.value || event;
+      this.themeName = themeName;
+      setTheme(themeName);
+      this.updateThemeCSS(this.themeCSS);
     },
   },
   computed: {

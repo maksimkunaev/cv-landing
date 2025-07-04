@@ -36,7 +36,6 @@ export default {
   },
   computed: {
     formattedDescription() {
-      console.log(bio);
       return bio.description.replace(
         /{technologies}/g,
         bio.technologies

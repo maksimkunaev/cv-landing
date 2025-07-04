@@ -8,7 +8,6 @@
     >
       <div class="inner">
         <div class="component">
-          <!-- {{ section.label }} -->
           <component :is="section.componentName" />
         </div>
       </div>
@@ -19,18 +18,34 @@
 <script>
 import { sections } from "~/constants/cv";
 
+import Bio from '~/components/Bio/Bio.vue'
+import About from '~/components/About/About.vue'
+import Experience from '~/components/Experience/Experience.vue'
+import Skills from '~/components/Skills/Skills.vue'
+import Projects from '~/components/Projects/Projects.vue'
+import Contact from '~/components/Contact/Contact.vue'
+
 export default {
-  name: "IndexPage",
+  name: 'IndexPage',
+  components: {
+    Bio,
+    About,
+    Experience,
+    Skills,
+    Projects,
+    Contact
+  },
   data() {
     return {
       sections,
-    };
+    }
   },
-};
+}
 </script>
 
 <style lang="stylus" scoped>
-@import "@/assets/css/stylus-variables.styl"
+@import "../assets/css/stylus-variables.styl" // путь относительно текущего .vue файла
+
 $header-height = 80px
 
 .wrapper
