@@ -17,6 +17,7 @@ html, body, #__nuxt, #__layout, .container
 .container
   display: flex;
   flex-direction: column;
+  
   font-family sans-serif
   color: var(--primary-color);
   transition: color 0.2s, background-color 0.2s
