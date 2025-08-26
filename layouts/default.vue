@@ -18,8 +18,8 @@ html, body, #__nuxt, #__layout, .container
   display: flex;
   flex-direction: column;
   font-family sans-serif
-  background: var(--primary-bg-color);
   color: var(--primary-color);
   transition: color 0.2s, background-color 0.2s
   padding-bottom: 48px;
+  background-image: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
 </style>
