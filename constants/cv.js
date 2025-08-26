@@ -119,7 +119,7 @@ export const contacts = [
 export const bio = {
   name: "Maksim Kunaev",
   occupation: "Frontend Engineer",
-  photo: "/media/photo.jpg",
+  photo: "/media/photo.webp",
   technologies,
   description: bioDescription,
   socials,
