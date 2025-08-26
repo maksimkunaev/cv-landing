@@ -1,8 +1,28 @@
 <template>
-  <div class="container">
-    <TheHeader />
-    <ScrollToTop />
-    <NuxtPage />
+  <div class="layout-wrapper">
+    <!-- Background Layer -->
+    <div class="background-layer">
+      <div class="gradient-background"></div>
+      <div class="neural-background">
+        <NeuralVisualization 
+          primary-color="#00bcd4"
+          secondary-color="#ffc107"
+          :node-count="60"
+          :speed="0.7"
+        />
+      </div>
+    </div>
+    
+    <!-- Content Layer -->
+    <div class="content-layer">
+      <div class="container">
+        <TheHeader />
+        <main class="main-content">
+          <NuxtPage />
+        </main>
+        <ScrollToTop />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -11,16 +31,57 @@ export default {};
 </script>
 
 <style lang="stylus">
-html, body, #__nuxt, #__layout, .container
+html, body, #__nuxt, #__layout
   min-height 100%
+  margin 0
+  padding 0
+
+.layout-wrapper
+  position relative
+  min-height 100vh
+  width 100%
+
+// Background Layer (z-index: 0)
+.background-layer
+  position absolute
+  top 0
+  left 0
+  width 100%
+  min-height 100%
+  z-index 0
+
+.gradient-background
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+  background-image linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))
+
+.neural-background
+  position absolute
+  top 0
+  left 0
+  width 100%
+  height 100%
+
+// Content Layer (z-index: 1)
+.content-layer
+  position relative
+  z-index 1
+  min-height 100vh
 
 .container
-  display: flex;
-  flex-direction: column;
-  
+  display flex
+  flex-direction column
+  min-height 100vh
   font-family sans-serif
-  color: var(--primary-color);
-  transition: color 0.2s, background-color 0.2s
-  padding-bottom: 48px;
-  background-image: linear-gradient(to right, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+  color var(--primary-color)
+  transition color 0.2s, background-color 0.2s
+  padding-bottom 48px
+  // No background - transparent to show neural animation
+
+.main-content
+  flex 1
+  // Main content area - transparent background
 </style>

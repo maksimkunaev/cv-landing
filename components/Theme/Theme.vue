@@ -5,7 +5,7 @@
       {{ themeCSS }}
       }
     </component>
-    <ThemeSwitcher @input="onChange" :value="themeName" />
+    <!-- <ThemeSwitcher @input="onChange" :value="themeName" /> -->
   </div>
 </template>
 
