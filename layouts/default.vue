@@ -83,8 +83,6 @@ html, body, #__nuxt, #__layout
 
 .main-content
   flex 1
-  text-shadow: 
-  4px 4px 0px rgba(0, 0, 0, 0.9),
-  8px 8px 12px rgba(0, 0, 0, 0.5);
+  text-shadow: 4px 4px 3px #0000005e, 8px 8px 12px #0000003b
   // Main content area - transparent background
 </style>
