@@ -4,15 +4,10 @@
     <div class="background-layer">
       <div class="gradient-background"></div>
       <div class="neural-background">
-        <NeuralVisualization 
-          primary-color="#00bcd4"
-          secondary-color="#ffc107"
-          :node-count="60"
-          :speed="0.7"
-        />
+        <NeuralVisualization primary-color="#00bcd4" secondary-color="#ffc107" :node-count="60" :speed="0.7" />
       </div>
     </div>
-    
+
     <!-- Content Layer -->
     <div class="content-layer">
       <div class="container">
@@ -24,12 +19,12 @@
       </div>
     </div>
 
-      <!-- Cloudflare Web Analytics -->
-    <script
+    <!-- Cloudflare Web Analytics -->
+    <!-- <script
       defer
       src="https://static.cloudflareinsights.com/beacon.min.js"
       data-cf-beacon='{"token": "42f5b12408294321acab228aa6dc4b12"}'
-    ></script>
+    ></script> -->
   </div>
 </template>
 
