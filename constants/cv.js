@@ -181,31 +181,6 @@ export const projects = [
     ],
   },
   {
-    title: "☕️ 'Coffee To Go' Telegram Order Bot",
-    problemStatement:
-      "Coffee shops lose 15-20% of morning rush customers due to long wait times and chaotic order management. Walk-in customers hate waiting in line just to place an order.",
-    keyFeatures: [
-      "Pre-order before arrival (5/15/30 min options)",
-      "Custom menu with a different drinks (latte, cappuccino, americano, etc)",
-      "Instant Telegram group notifications for baristas",
-      "One-tap 'I've arrived' confirmation",
-    ],
-    technologies: ["Telegram Bot API", "ManyChat (flow automation)"],
-    screenshots: [
-      "./projects/bot/bot1.png",
-      "./projects/bot/bot2.png",
-      "./projects/bot/bot3.png",
-      "./projects/bot/bot4.png",
-      "./projects/bot/bot5.png",
-    ],
-    date: "2025",
-    link: "https://t.me/CaffePromenadaBot",
-    results: [
-      "Reduced average wait time from 8 mins → 1.5 mins",
-      "Increased morning rush capacity",
-    ],
-  },
-  {
     title: "🔍 CV Autofill Chrome Extension",
     problemStatement:
       "Job seekers waste hours manually filling identical information across different job application forms.",
@@ -231,6 +206,31 @@ export const projects = [
       "Reduces application time from 10-15 mins to ~30 seconds",
       "Handles 90%+ of common form fields automatically",
       "Supports many major job platforms",
+    ],
+  },
+  {
+    title: "☕️ 'Coffee To Go' Telegram Order Bot",
+    problemStatement:
+      "Coffee shops lose 15-20% of morning rush customers due to long wait times and chaotic order management. Walk-in customers hate waiting in line just to place an order.",
+    keyFeatures: [
+      "Pre-order before arrival (5/15/30 min options)",
+      "Custom menu with a different drinks (latte, cappuccino, americano, etc)",
+      "Instant Telegram group notifications for baristas",
+      "One-tap 'I've arrived' confirmation",
+    ],
+    technologies: ["Telegram Bot API", "ManyChat (flow automation)"],
+    screenshots: [
+      "./projects/bot/bot1.png",
+      "./projects/bot/bot2.png",
+      "./projects/bot/bot3.png",
+      "./projects/bot/bot4.png",
+      "./projects/bot/bot5.png",
+    ],
+    date: "2025",
+    link: "https://t.me/CaffePromenadaBot",
+    results: [
+      "Reduced average wait time from 8 mins → 1.5 mins",
+      "Increased morning rush capacity",
     ],
   },
 ];

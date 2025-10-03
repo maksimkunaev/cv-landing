@@ -1,62 +1,52 @@
 <template>
-  <div class="project-card">
-    <!-- Header -->
-    <div class="project-header">
-      <h2 class="project-title">{{ item.title }}</h2>
-      <div class="project-meta">
-        <a v-if="item.link" :href="item.link" target="_blank" class="project-link">
-          View Project →
-        </a>
+  <div class="project-card" :class="{ 'alternate': alternate }">
+    <!-- Screenshots Side -->
+    <div class="project-visual">
+      <ImageSlider v-if="item.screenshots" :images="item.screenshots" :alt-prefix="item.title" />
+    </div>
+
+    <!-- Content Side -->
+    <div class="project-info">
+      <div class="project-header">
+        <h2 class="project-title">{{ item.title }}</h2>
         <span class="project-date">{{ item.date }}</span>
       </div>
-    </div>
 
-    <!-- Problem -->
-    <div class="product-section">
-      <h3 class="section-title">What it solves</h3>
-      <p class="product-description">{{ item.problemStatement }}</p>
-    </div>
-
-    <!-- Screenshots -->
-    <ImageSlider 
-      v-if="item.screenshots" 
-      :images="item.screenshots" 
-      :alt-prefix="item.title"
-    />
-
-    <!-- Solution -->
-    <div class="tech-section">
-      <h3 class="section-title">How it works</h3>
-      <ul class="feature-list">
-        <li v-for="(feature, index) in item.keyFeatures" :key="index">
-          {{ feature }}
-        </li>
-      </ul>
-    </div>
-
-    <!-- Technologies -->
-    <div class="tech-stack-wrapper">
-      <h3 class="section-title">Technologies</h3>
-      <div class="tech-stack">
-        <span 
-          v-for="(tech, index) in item.technologies" 
-          :key="index" 
-          class="tech-tag"
-        >
-          {{ tech }}
-        </span>
+      <div class="section">
+        <h3 class="section-title">Problem</h3>
+        <p class="section-text">{{ item.problemStatement }}</p>
       </div>
-    </div>
 
-    <!-- Results - NEW SECTION -->
-    <div v-if="item.results" class="results-section">
-      <h3 class="section-title">Results</h3>
-      <ul class="results-list">
-        <li v-for="(result, index) in item.results" :key="index" class="result-item">
-          <!-- <span class="result-icon">✓</span> -->
-          {{ result }}
-        </li>
-      </ul>
+      <div class="section">
+        <h3 class="section-title">Solution</h3>
+        <ul class="list">
+          <li v-for="(feature, index) in item.keyFeatures" :key="index">
+            {{ feature }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3 class="section-title">Tech Stack</h3>
+        <div class="tech-stack">
+          <span v-for="(tech, index) in item.technologies" :key="index" class="tech-tag">
+            {{ tech }}
+          </span>
+        </div>
+      </div>
+
+      <div v-if="item.results" class="section results">
+        <h3 class="section-title">Impact</h3>
+        <ul class="list impact-list">
+          <li v-for="(result, index) in item.results" :key="index">
+            {{ result }}
+          </li>
+        </ul>
+      </div>
+
+      <a v-if="item.link" :href="item.link" target="_blank" class="project-link">
+        View Live Project →
+      </a>
     </div>
   </div>
 </template>
@@ -79,6 +69,10 @@ export default {
           'technologies'
         ].every(field => field in value)
       }
+    },
+    alternate: {
+      type: Boolean,
+      default: false
     }
   }
 };
@@ -86,13 +80,63 @@ export default {
 
 <style lang="stylus" scoped>
 .project-card {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 3rem;
+  padding: 2.5rem;
+  border-radius: 12px;
+  background: rgba(40, 50, 70, 0.25);
+  border: 1px solid rgba(100, 200, 255, 0.1);
+  transition: all 0.3s;
+  
+  &:hover {
+    border-color: rgba(100, 200, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(100, 200, 255, 0.15);
+  }
+
+  &.alternate {
+    grid-template-columns: 1.1fr 0.9fr;
+    
+    .project-visual {
+      order: 2;
+    }
+    
+    .project-info {
+      order: 1;
+    }
+  }
+
+  @media (max-width: 968px) {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    
+    &.alternate {
+      .project-visual {
+        order: 1;
+      }
+      
+      .project-info {
+        order: 2;
+      }
+    }
+  }
+}
+
+.project-visual {
+  display: flex;
+  align-items: flex-start;
+}
+
+.project-visual img {
+  max-height: 320px;  /* или что-то вроде этого */
+  width: auto;
+  object-fit: contain;
+}
+
+.project-info {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  padding: 1.5rem;
-  border-radius: 8px;
-  background: var(--card-bg);
-  border: 1px solid var(--border-color);
 }
 
 .project-header {
@@ -100,52 +144,75 @@ export default {
   justify-content: space-between;
   align-items: baseline;
   gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid rgba(100, 200, 255, 0.2);
 }
 
 .project-title {
   margin: 0;
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   font-weight: 600;
+  line-height: 1.3;
 }
 
-.project-meta {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.project-link {
-  color: var(--primary-color);
-  text-decoration: none;
+.project-date {
+  color: rgba(100, 200, 255, 0.6);
   font-size: 0.875rem;
-  
-  &:hover {
-    text-decoration: underline;
-  }
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 .section-title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1rem;
-  font-weight: bold;
-  color: var(--text-primary);
-  text-decoration: underline;
-  font-style: italic;
-}
-
-.product-description {
   margin: 0;
-  line-height: 1.5;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: rgba(100, 200, 255, 0.9);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
-.feature-list {
-  list-style: circle;
+.section-text {
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.95rem;
 }
 
-.feature-list, .results-list {
+.list {
   padding-left: 1.25rem;
-  margin: 0.5rem 0 1rem;
-  line-height: 1.5;
+  margin: 0;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 0.9rem;
+  list-style: circle;
+  
+  li {
+    margin-bottom: 0.4rem;
+  }
+}
+
+.impact-list {
+  list-style: none;
+  padding-left: 0;
+  
+  li {
+    position: relative;
+    padding-left: 1.5rem;
+    
+    &::before {
+      content: '▸';
+      position: absolute;
+      left: 0;
+      color: rgba(100, 200, 255, 0.8);
+      font-weight: bold;
+    }
+  }
 }
 
 .tech-stack {
@@ -155,25 +222,40 @@ export default {
 }
 
 .tech-tag {
-  background: var(--tag-bg);
-  color: var(--tag-text);
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
+  background: rgba(100, 200, 255, 0.12);
+  color: rgba(100, 200, 255, 0.95);
+  border: 1px solid rgba(100, 200, 255, 0.25);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
   font-size: 0.75rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  
+  &:hover {
+    background: rgba(100, 200, 255, 0.2);
+    border-color: rgba(100, 200, 255, 0.4);
+  }
 }
 
-.results-list {
-  list-style: disc;
-}
-
-.result-item {
-  align-items: flex-start;
-  gap: 0.5rem;
-  margin-bottom: 0.5rem;
-}
-
-.result-icon {
-  color: var(--success-color);
-  font-weight: bold;
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  color: rgba(100, 200, 255, 0.95);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border: 2px solid rgba(100, 200, 255, 0.3);
+  border-radius: 8px;
+  background: rgba(100, 200, 255, 0.05);
+  transition: all 0.2s;
+  align-self: flex-start;
+  margin-top: 0.5rem;
+  
+  &:hover {
+    background: rgba(100, 200, 255, 0.15);
+    border-color: rgba(100, 200, 255, 0.5);
+    transform: translateX(4px);
+  }
 }
 </style>
