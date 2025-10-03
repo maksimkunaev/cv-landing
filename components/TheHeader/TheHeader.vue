@@ -2,15 +2,9 @@
   <div class="header-wrapper">
     <header class="header-root">
       <nav class="header-tabs">
-        <a
-          class="header-button header-S"
-          :class="{ 'header-active': activeTab === section.link }"
-          v-for="section in filteredSections"
-          :key="section.link"
-          :href="`#${section.link}`"
-          @click="({ target }) => handleTabClick(target, section.link)"
-          >{{ section.label }}</a
-        >
+        <a class="header-button header-S" :class="{ 'header-active': activeTab === section.link }"
+          v-for="section in filteredSections" :key="section.link" :href="`#${section.link}`"
+          @click="({ target }) => handleTabClick(target, section.link)">{{ section.label }}</a>
       </nav>
       <Theme class="header-theme" />
     </header>
@@ -79,6 +73,7 @@ export default {
   right: 0;
   left: 0;
   overflow auto
+  z-index 9
 
 .header-tabs
   display: flex;
