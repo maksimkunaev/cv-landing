@@ -82,8 +82,8 @@ export default {
 .project-card {
   display: grid;
   grid-template-columns: 0.9fr 1.1fr;
-  gap: 3rem;
-  padding: 2.5rem;
+  gap: 1.8rem;
+  padding: 2rem;
   border-radius: 12px;
   background: rgba(40, 50, 70, 0.25);
   border: 1px solid rgba(100, 200, 255, 0.1);
@@ -125,12 +125,8 @@ export default {
 .project-visual {
   display: flex;
   align-items: flex-start;
-}
-
-.project-visual img {
-  max-height: 320px;  /* или что-то вроде этого */
-  width: auto;
-  object-fit: contain;
+  max-height: 500px;
+  overflow: hidden;
 }
 
 .project-info {

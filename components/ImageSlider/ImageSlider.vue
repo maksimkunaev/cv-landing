@@ -52,10 +52,12 @@ export default {
       this.currentIndex = index;
       this.isLightboxOpen = true;
       document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", this.handleKeydown);
     },
     closeLightbox() {
       this.isLightboxOpen = false;
       document.body.style.overflow = "";
+      window.removeEventListener("keydown", this.handleKeydown);
     },
     nextImage() {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
@@ -63,6 +65,25 @@ export default {
     prevImage() {
       this.currentIndex = (this.currentIndex - 1 + this.images.length) % this.images.length;
     },
+    handleKeydown(e) {
+      if (!this.isLightboxOpen) return;
+
+      switch (e.key) {
+        case "Escape":
+          this.closeLightbox();
+          break;
+        case "ArrowRight":
+          this.nextImage();
+          break;
+        case "ArrowLeft":
+          this.prevImage();
+          break;
+      }
+    },
+  },
+  beforeUnmount() {
+    // cleanup in case lightbox was left open
+    window.removeEventListener("keydown", this.handleKeydown);
   },
 };
 </script>
@@ -70,6 +91,7 @@ export default {
 <style lang="stylus" scoped>
 .slider-container {
   width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   gap: 12px;
@@ -77,12 +99,16 @@ export default {
 
 .main-image-wrapper {
   width: 100%;
+  max-height: 400px;
   border-radius: 8px;
   overflow: hidden;
   border: 2px solid rgba(100, 200, 255, 0.2);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
   transition: all 0.3s;
   cursor: zoom-in;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   
   &:hover {
     border-color: rgba(100, 200, 255, 0.4);
@@ -92,9 +118,12 @@ export default {
 }
 
 .main-image {
-  width: 100%;
+  max-width: 100%;
+  max-height: 400px;
+  width: auto;
   height: auto;
   display: block;
+  object-fit: contain;
   transition: transform 0.3s;
   
   .main-image-wrapper:hover & {
