@@ -111,6 +111,7 @@ export default {
     gap: 2rem;
     
     &.alternate {
+      grid-template-columns: 1fr
       .project-visual {
         order: 1;
       }

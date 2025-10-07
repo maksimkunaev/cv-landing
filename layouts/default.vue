@@ -1,17 +1,18 @@
 <template>
   <div class="layout-wrapper">
+    <TheHeader />
     <!-- Background Layer -->
     <div class="background-layer">
       <div class="gradient-background"></div>
       <div class="neural-background">
-        <NeuralVisualization primary-color="#00bcd4" secondary-color="#ffc107" :node-count="60" :speed="0.7" />
+        <NeuralVisualization primary-color="#00bcd4" secondary-color="#ffc107" :node-count="30" :speed="0.7" />
       </div>
     </div>
+
 
     <!-- Content Layer -->
     <div class="content-layer">
       <div class="container">
-        <TheHeader />
         <main class="main-content">
           <NuxtPage />
         </main>

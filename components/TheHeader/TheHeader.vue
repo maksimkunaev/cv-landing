@@ -62,7 +62,10 @@ export default {
 @import "../../assets/css/stylus-variables.styl"
 .header-wrapper
   scrollbar(0)
-
+  position sticky
+  z-index: 99;
+  font-family: sans-serif;
+  
 .header-root
   display: flex;
   align-items: center;

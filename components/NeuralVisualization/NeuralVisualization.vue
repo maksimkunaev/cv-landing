@@ -1,12 +1,14 @@
 <template>
-  <canvas
-    ref="canvasRef"
-    class="network-canvas"
-  ></canvas>
+  <svg class="network-svg" :width="width" :height="height">
+    <line v-for="(conn, i) in connections" :key="`conn-${i}`" :x1="conn.x1" :y1="conn.y1" :x2="conn.x2" :y2="conn.y2"
+      :stroke="secondaryColor" stroke-width="1" :opacity="conn.opacity" />
+    <circle v-for="(node, i) in nodes" :key="`node-${i}`" :cx="node.x" :cy="node.y" :r="node.size"
+      :fill="primaryColor" />
+  </svg>
 </template>
 
 <script>
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 export default {
   name: 'NetworkAnimation',
@@ -21,7 +23,7 @@ export default {
     },
     nodeCount: {
       type: Number,
-      default: 80
+      default: 50
     },
     connectionDistance: {
       type: Number,
@@ -33,130 +35,85 @@ export default {
     }
   },
   setup(props) {
-    const canvasRef = ref(null)
-    const animationRef = ref(null)
     const nodes = ref([])
-    
-    const initCanvas = () => {
-      const canvas = canvasRef.value
-      if (!canvas) return
-      
-      const resize = () => {
-        canvas.width = canvas.offsetWidth
-        canvas.height = canvas.offsetHeight
-        initNodes()
-      }
-      
-      resize()
-      window.addEventListener('resize', resize)
-      
-      return () => window.removeEventListener('resize', resize)
-    }
-    
+    const connections = ref([])
+    const animationRef = ref(null)
+    const nodeData = ref([])
+    const width = window.innerWidth
+    const height = window.innerHeight
+
     const initNodes = () => {
-      const canvas = canvasRef.value
-      if (!canvas) return
-      
-      nodes.value = []
-      for (let i = 0; i < props.nodeCount; i++) {
-        nodes.value.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          vx: (Math.random() - 0.5) * props.speed,
-          vy: (Math.random() - 0.5) * props.speed,
-          size: Math.random() * 3 + 2
-        })
-      }
+      nodeData.value = Array.from({ length: props.nodeCount }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * props.speed,
+        vy: (Math.random() - 0.5) * props.speed,
+        size: Math.random() * 3 + 2
+      }))
     }
-    
+
     const animate = () => {
-      const canvas = canvasRef.value
-      if (!canvas) return
-      
-      const ctx = canvas.getContext('2d')
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      
-      // Update and draw nodes
-      nodes.value.forEach(node => {
-        // Move
+      nodeData.value.forEach(node => {
         node.x += node.vx
         node.y += node.vy
-        
-        // Bounce off edges
-        if (node.x < 0 || node.x > canvas.width) node.vx *= -1
-        if (node.y < 0 || node.y > canvas.height) node.vy *= -1
-        
-        // Keep in bounds
-        node.x = Math.max(0, Math.min(canvas.width, node.x))
-        node.y = Math.max(0, Math.min(canvas.height, node.y))
-        
-        // Draw node
-        ctx.beginPath()
-        ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2)
-        ctx.fillStyle = props.primaryColor
-        ctx.fill()
+
+        if (node.x < 0 || node.x > width) node.vx *= -1
+        if (node.y < 0 || node.y > height) node.vy *= -1
+
+        node.x = Math.max(0, Math.min(width, node.x))
+        node.y = Math.max(0, Math.min(height, node.y))
       })
-      
-      // Draw connections
-      ctx.strokeStyle = props.secondaryColor
-      ctx.lineWidth = 1
-      
-      for (let i = 0; i < nodes.value.length; i++) {
-        for (let j = i + 1; j < nodes.value.length; j++) {
-          const dx = nodes.value[i].x - nodes.value[j].x
-          const dy = nodes.value[i].y - nodes.value[j].y
+
+      const newConnections = []
+      for (let i = 0; i < nodeData.value.length; i++) {
+        for (let j = i + 1; j < nodeData.value.length; j++) {
+          const dx = nodeData.value[i].x - nodeData.value[j].x
+          const dy = nodeData.value[i].y - nodeData.value[j].y
           const distance = Math.sqrt(dx * dx + dy * dy)
-          
+
           if (distance < props.connectionDistance) {
-            const opacity = 1 - (distance / props.connectionDistance)
-            ctx.globalAlpha = opacity * 0.5
-            ctx.beginPath()
-            ctx.moveTo(nodes.value[i].x, nodes.value[i].y)
-            ctx.lineTo(nodes.value[j].x, nodes.value[j].y)
-            ctx.stroke()
+            const opacity = (1 - (distance / props.connectionDistance)) * 0.5
+            newConnections.push({
+              x1: nodeData.value[i].x,
+              y1: nodeData.value[i].y,
+              x2: nodeData.value[j].x,
+              y2: nodeData.value[j].y,
+              opacity
+            })
           }
         }
       }
-      
-      ctx.globalAlpha = 1
+
+      nodes.value = [...nodeData.value]
+      connections.value = newConnections
       animationRef.value = requestAnimationFrame(animate)
     }
-    
-    const startAnimation = () => {
+
+    onMounted(() => {
+      initNodes()
+      animate()
+    })
+
+    onUnmounted(() => {
       if (animationRef.value) {
         cancelAnimationFrame(animationRef.value)
       }
-      animate()
-    }
-    
-    // Watch for prop changes
-    watch(() => props.nodeCount, () => {
-      initNodes()
     })
-    
-    onMounted(() => {
-      const cleanup = initCanvas()
-      startAnimation()
-      
-      onUnmounted(() => {
-        if (animationRef.value) {
-          cancelAnimationFrame(animationRef.value)
-        }
-        if (cleanup) cleanup()
-      })
-    })
-    
+
     return {
-      canvasRef
+      nodes,
+      connections,
+      width,
+      height
     }
   }
 }
 </script>
 
 <style scoped>
-.network-canvas {
-  width: 100%;
-  height: 100%;
+.network-svg {
+  width: 100vw;
+  height: 100vh;
   display: block;
 }
 </style>
